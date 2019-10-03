@@ -27,6 +27,8 @@ public class Place {
 	 */
 	private boolean terminal;
 	
+	private boolean visited;
+	
 	/**
 	 * Internal only constructor for Place. Use {@link #create(String, String)} or {@link #terminal(String, String)} instead.
 	 * @param id - the internal id of this place.
@@ -128,4 +130,10 @@ public class Place {
 		return false;
 	}
 	
+	public boolean visited() {
+		return this.visited;
+	}
+		public boolean visit() {
+			return this.visited = true;
+	}
 }

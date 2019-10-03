@@ -10,8 +10,10 @@ import java.util.List;
  * @author jfoley
  *
  */
+
 public class InteractiveFiction {
 
+	
 	/**
 	 * This method actually plays the game.
 	 * @param input - a helper object to ask the user questions.
@@ -32,6 +34,10 @@ public class InteractiveFiction {
 			System.out.println();
 			System.out.println("... --- ...");
 			System.out.println(here.getDescription());
+			
+			if (here.visited()){
+				System.out.println("Looks like you've already been here");
+			}
 
 			// Game over after print!
 			if (here.isTerminalState()) {
@@ -57,11 +63,18 @@ public class InteractiveFiction {
 			// Do not uppercase action -- I have lowercased it.
 			String action = words.get(0).toLowerCase().trim();
 
-			if (action.equals("quit")) {
+			if (action.equals("quit")||action.equals("escape")) {
 				if (input.confirm("Are you sure you want to quit?")) {
 					return place;
 				} else {
 					continue;
+				}
+			}
+			
+			if (action.equals("help")) {
+				System.out.println("Enter the number of the room that you're currently in");
+				System.out.println("If you want to quit, type escape");
+				continue;
 				}
 			}
 
