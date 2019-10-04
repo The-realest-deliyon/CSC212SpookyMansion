@@ -22,6 +22,8 @@ public class Exit {
 	 * @param target - where it goes.
 	 * @param description - how it looks.
 	 */
+	
+	
 	public Exit(String target, String description) {
 		this.description = description;
 		this.target = target;
@@ -62,6 +64,7 @@ public class Exit {
 	 * @param other - another exit.
 	 * @return if they go to the same place.
 	 */
+	
 	public boolean goesToSamePlace(Exit other) {
 		return this.target.equals(other.target);
 	}
