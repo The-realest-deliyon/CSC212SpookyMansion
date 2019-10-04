@@ -81,9 +81,21 @@ public class Place {
 	public List<Exit> getVisibleExits() {
 		List<Exit> visible = new ArrayList<>();
 		for (Exit e : this.exits) {
-			visible.add(e);
+			
+			if (e.isSecret() == false) {
+				visible.add(e);
+			}
 		}
 		return visible;
+	}
+	
+	public List<Exit> getInvisibleExits(){
+		List<Exit> invisible = new ArrayList<>();
+		for (Exit e: this.exits) {
+			if (e.isSecret()==true) {
+				invisible.add(e);
+			}
+		}
 	}
 	
 	/**
