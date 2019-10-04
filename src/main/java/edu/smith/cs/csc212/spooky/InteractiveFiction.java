@@ -76,7 +76,6 @@ public class InteractiveFiction {
 				System.out.println("If you want to quit, type escape");
 				continue;
 				}
-			}
 
 			// From here on out, what they typed better be a number!
 			Integer exitNum = null;
@@ -98,8 +97,7 @@ public class InteractiveFiction {
 		}
 
 		return place;
-	}
-
+}
 	/**
 	 * This is where we play the game.
 	 * @param args
