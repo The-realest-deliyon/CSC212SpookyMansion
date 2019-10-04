@@ -48,10 +48,6 @@ public class SpookyMansion implements GameWorld {
 		Cafe.addExit(new Exit("Directions?","You could ask an employee for some help"));
 		//Let this be your secret exit. they'll guide you to the woods party.
 		
-		//Place ExitDoor = insert(
-				//Place.create("Exit Door", "Have you not seen scary movies?"));
-		//ExitDoor.addExit(new Exit("labyrinth0", ""));
-		
 		
 		Place APL = insert(Place.create("Airport Lounge",
 				"Some papers rustle from the wind as you enter the airport lounge. Creepy.\n" + "It's big in here."));
@@ -85,14 +81,14 @@ public class SpookyMansion implements GameWorld {
 
 		Place Prescott = insert(Place.create("Prescott", "Welcome to a house complex really close to the woods"));
 		Prescott.addExit(new Exit("Bus", "Back to the Hampshire College Bus Stop"));
-		Prescott.addExit(new Exit("Woods", "Walk into the Hampshire Woods "));
+		Prescott.addExit(new Exit("Woods0", "Walk into the Hampshire Woods "));
 		Prescott.addExit(new Exit("Library", "Walk back to the Library"));
 
 		
 		Place Greenish = insert(Place.create("Greenish", "Welcome to a housing complex close to the woods"));
-		Prescott.addExit(new Exit("Bus", "Back to the Hampshire College Bus Stop"));
-		Prescott.addExit(new Exit("Woods", "Walk the Road up into the Woods"));
-		Prescott.addExit(new Exit("RCC", "Back to the RCC"));
+		Greenish.addExit(new Exit("Bus", "Back to the Hampshire College Bus Stop"));
+		Greenish.addExit(new Exit("Woods0", "Walk the Road up into the Woods"));
+		Greenish.addExit(new Exit("RCC", "Back to the RCC"));
 		
 		
 		Place Endfield = insert(Place.create("Endfield", "Welcome to a housing complex FAR from the woods"));
@@ -107,31 +103,8 @@ public class SpookyMansion implements GameWorld {
 		Elevator.addExit(new Exit("Media Basement", "LOWEST FLOOR"));
 		
 		Place Woods = insert(Place.create("Hampshire Woods", "Welcome to the real fun "+ EMOJI_SKULL));
-		Woods.addExit(new Exit("
+		Woods.addExit(new Exit("Woods0","Welcome to the woods"));
 		
-		
-		
-		
-		
-		
-		//int hallwayDepth = 5;
-		//int lastHallwayPart = hallwayDepth - 1;
-		//for (int i = 0; i < hallwayDepth; i++) {
-			//Place hallwayPart = insert(Place.create("hallway" + i, "This is a very long hallway."));
-			//if (i == 0) {
-				//hallwayPart.addExit(new Exit("secretRoom", "Go back."));
-			//} //else {
-				//hallwayPart.addExit(new Exit("hallway" + (i - 1), "Go back."));
-			//}
-			//if (i != lastHallwayPart) {
-				//hallwayPart.addExit(new Exit("hallway" + (i + 1), "Go forward."));
-			//} //else {
-				//hallwayPart.addExit(new Exit("crypt", "There is darkness ahead."));
-			//}
-		//}
-
-		Place WoodsParty = insert(Place.terminal("Woods Party", "Welcome to a Hampshire Woods Party.\n"
-				+ "You made it Congrats.\n" + "You ready to make some bad decisions?."));
 
 		String WoodsDescription = "Hope you remembered that code from the basement\n"
 				+ "Time to walk in the dark";
@@ -174,11 +147,14 @@ public class SpookyMansion implements GameWorld {
 		
 		// solution: East
 		Woods5.addExit(new Exit("Woods0", "Go North."));
-		Woods5.addExit(new Exit("Woods0", "Go East."));
+		Woods5.addExit(new Exit("WoodsParty", "Go East."));
 		Woods5.addExit(new Exit("Woods0", "Go South."));	
-		Woods5.addExit(new Exit("Woods6", "Go West."));
+		Woods5.addExit(new Exit("Woods0", "Go West"));
 
 
+		Place WoodsParty = insert(Place.terminal("Woods Party", "Welcome to a Hampshire Woods Party.\n"
+				+ "You made it Congrats.\n" + "You ready to make some bad decisions?."));
+		
 		// Make sure your graph makes sense!
 		checkAllExitsGoSomewhere();
 	}
