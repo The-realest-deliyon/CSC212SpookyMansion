@@ -35,6 +35,12 @@ public class InteractiveFiction {
 			System.out.println("... --- ...");
 			System.out.println(here.getDescription());
 			
+			//if(action.eqauls("search")) {
+				//for (Exit e: here.getInvisibleExits()) {
+					//e.search();
+				//}
+			//}
+			
 			if (here.visited()){
 				System.out.println("Looks like you've already been here");
 			}

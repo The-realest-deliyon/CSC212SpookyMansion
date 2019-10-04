@@ -68,6 +68,9 @@ public class Exit {
 	public boolean goesToSamePlace(Exit other) {
 		return this.target.equals(other.target);
 	}
+	public boolean isSecret() {
+		return false;
+	}
 	
 	/**
 	 * The other half of hashCode that lets us put it in a HashMap or HashSet.

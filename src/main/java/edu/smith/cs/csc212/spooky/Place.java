@@ -89,14 +89,6 @@ public class Place {
 		return visible;
 	}
 	
-	public List<Exit> getInvisibleExits(){
-		List<Exit> invisible = new ArrayList<>();
-		for (Exit e: this.exits) {
-			if (e.isSecret() == true) {
-				invisible.add(e);
-			}
-		}
-	}
 	
 	/**
 	 * This is a terminal location (good or bad).
