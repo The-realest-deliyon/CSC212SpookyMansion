@@ -16,7 +16,7 @@ public class SpookyMansion implements GameWorld {
 	 */
 	@Override
 	public String getStart() {
-		return "Robert Crown Center";
+		return "BusStop";
 	}
 
 	/**
@@ -33,18 +33,17 @@ public class SpookyMansion implements GameWorld {
 
 
 		String EMOJI_SKULL = "\uD83D\uDC80";
-		//
 		
 		Place RCC = insert(Place.create("Robert Crown Center", "Your greeted by a student worker who looks tired of his shift.\n"
 				+ "You have to scan your ID to go any further \n" 
 				+ "You ignore him"));
 		RCC.addExit(new Exit("Gym", "Cross the Basketball court to the gym"));
 		RCC.addExit(new Exit("Cafe", "Upstairs to the cafe"));
-		RCC.addExit(new Exit("Bus Stop", "That way goes back to the Hampshire bus stop"));
+		RCC.addExit(new Exit("Bus Stop", "That way goes back to the bus stop"));
 
 		Place Cafe = insert(
 				Place.create("Cafe", "You found the cafe.\n" + "Smells like chicken tendnders in here.\n"));
-		Cafe.addExit(new Exit("Cross the bridge", "There's a bridge leading to another area"));
+		Cafe.addExit(new Exit("APL", "There's a bridge leading to the Airport Lounge"));
 		Cafe.addExit(new Exit("RCC", "Go back downstairs"));
 		Cafe.addExit(new Exit("Directions?","You could ask an employee for some help"));
 		//Let this be your secret exit. they'll guide you to the woods party.
@@ -85,13 +84,13 @@ public class SpookyMansion implements GameWorld {
 
 		Place Prescott = insert(Place.create("Prescott", "Welcome to a house complex really close to the woods"));
 		Prescott.addExit(new Exit("Bus", "Back to the Hampshire College Bus Stop"));
-		Prescott.addExit(new Exit("Woods", "Walk into the Hampshire Woods "));
+		Prescott.addExit(new Exit("Woods0", "Woods Description"));
 		Prescott.addExit(new Exit("Library", "Walk back to the Library"));
 
 		
 		Place Greenish = insert(Place.create("Greenish", "Welcome to a housing complex close to the woods"));
 		Greenish.addExit(new Exit("Bus", "Back to the Hampshire College Bus Stop"));
-		Greenish.addExit(new Exit("Woods", "Walk the Road up into the Woods"));
+		Greenish.addExit(new Exit("Woods0", "Woods Description"));
 		Greenish.addExit(new Exit("RCC", "Back to the RCC"));
 		
 		
@@ -108,24 +107,9 @@ public class SpookyMansion implements GameWorld {
 		
 		Place Woods = insert(Place.create("Hampshire Woods", "Welcome to the real fun "+ EMOJI_SKULL));
 		Woods.addExit(new Exit("Woods Party","Woods0"));
-		
-		
-		int WoodsDepth = 5;
-		int lastWoodsPart = WoodsDepth - 1;
-		for (int i = 0; i < WoodsDepth; i++) {
-			Place WoodsPart = insert(Place.create("hallway" + i, "This is a very long hallway."));
-			if (i == 0) {
-				WoodsPart.addExit(new Exit("secretRoom", "Go back."));
-			} else {
-				WoodsPart.addExit(new Exit("hallway" + (i - 1), "Go back."));
-			}
-			if (i != lastWoodsPart) {
-				WoodsPart.addExit(new Exit("hallway" + (i + 1), "Go forward."));
-			} else {
-				WoodsPart.addExit(new Exit("crypt", "There is darkness ahead."));
-			}
-		}
-
+	
+//		Place  Wo0ds= insert(Place.terminal("Woods Party", "Welcome to a Hampshire Woods Party.\n"
+//				+ "You made it Congrats.\n" + "You ready to make some bad decisions?."));
 
 		String WoodsDescription = "Hope you remembered that code from the basement\n"
 				+ "Time to walk in the dark";
